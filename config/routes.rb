@@ -1,5 +1,9 @@
 AAAWebsite::Application.routes.draw do
 
+  devise_for :users
+
+  resources :events
+
   root :to => 'aaa-core#index'
   #get "aaa_core/index"
 
