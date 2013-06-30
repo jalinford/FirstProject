@@ -3,6 +3,8 @@
 *
 */
 
+@import "site-branding";
+
 nav#main_nav {
   ul {
     text-align: center;
@@ -17,7 +19,7 @@ nav#main_nav {
     a,
     a:link,
     a:visited {
-      color: #FFF;
+      color: $white;
       text-decoration: none;
     }
   }
