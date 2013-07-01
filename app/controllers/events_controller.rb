@@ -1,15 +1,12 @@
 class EventsController < ApplicationController
 
   before_filter :authenticate_user!, :except => [:index, :show]
+  respond_ro :html, :xml, :json
   # GET /events
   # GET /events.json
   def index
     @events = Event.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @events }
-    end
+	respond_with(@events)
   end
 
   # GET /events/1
@@ -81,11 +78,6 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url }
       format.json { head :no_content }
     end
-  end
-  
-  private
-  def require_authentication
-    
   end
   
 end
